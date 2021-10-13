@@ -22,7 +22,10 @@ import com.zkteco.emp.exception.EmployeeNotFoundException;
 import com.zkteco.emp.repository.EmployeeRepository;
 import com.zkteco.emp.service.EmployeeService;
 
+import io.swagger.annotations.Api;
+
 @Component
+@Api
 public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired

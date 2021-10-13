@@ -49,17 +49,20 @@ public class EmployeeController {
 		return empService.fetchEmployeeById(id);
 	}
 
+	@ApiOperation(value = "returns saved employee")
 	@PostMapping
 	public ResultDTO saveEmployee(@Valid @RequestBody EmployeeDTO dto) throws EmployeeNotFoundException {
 		return empService.saveEmployee(dto);
 	}
 
+	@ApiOperation(value = "returns updated employee")
 	@PutMapping("/{id}")
 	public ResultDTO updateEmployee(@PathVariable(value = "id") String id, @RequestBody Employee emp)
 			throws EmployeeNotFoundException {
 		return empService.updateEmployee(id, emp);
 	}
 
+	@ApiOperation(value = "returns deleted employee by Id")
 	@DeleteMapping
 	public ResultDTO deleteEmployeeByName(@RequestParam String id) throws EmployeeNotFoundException {
 		return empService.deleteEmployeeById(id);
